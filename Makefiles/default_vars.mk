@@ -12,7 +12,9 @@
 
 CC				:=	g++
 
+#*#*#*#*# CHANGE PROGRAM NAME HERE #*#*#*#*#
 NAME			:=	SFMLProjectTemplate
+#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
 
 CFLAGS			:=	-Wall -Werror -Wextra -std=c++17
 

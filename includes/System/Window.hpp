@@ -7,7 +7,11 @@ class Window
 {
 private:
 	sf::RenderWindow	mWindow;
+	/****************************
+	 * Change window title here *
+	 ****************************/
 	std::string			mTitle = "SFML Template Project";
+	
 	bool				mFullscreen = false;
 	sf::VideoMode		mMode = sf::VideoMode(1600, 900);
 
