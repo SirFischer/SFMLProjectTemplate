@@ -18,7 +18,7 @@ NAME			:=	SFMLProjectTemplate
 
 CFLAGS			:=	-Wall -Werror -Wextra -std=c++17
 
-CLIBS			+= -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network
+CLIBS			+= -lsfml-graphics -lsfml-window -lsfml-system -lsfml-network -lsfml-audio
 
 BLACK_LIST_SRCS :=	
 

@@ -43,6 +43,8 @@ void		GameState::Update()
 void		GameState::Render()
 {
 	mWindow->Clear(sf::Color::Green);
+
+	//RENDER YOUR STUFF
 	
 	mf::GUI::Render();
 	mWindow->Render();
