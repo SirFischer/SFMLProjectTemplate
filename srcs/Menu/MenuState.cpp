@@ -28,6 +28,12 @@ void		MenuState::Init()
 		*active = false;
 	});
 
+	mPlayBtn->SetTextFont(*ResourceManager::LoadFont("assets/fonts/Roboto-Regular.ttf"));
+	mPlayBtn->SetTextColor(sf::Color::Black);
+	mPlayBtn->SetTextPosition(sf::Vector2f(15, 5));
+	mPlayBtn->SetText("Play!");
+
+
 	mQuitBtn = mf::Button::Create(sf::Color::Red, sf::Color::Yellow);
 	mQuitBtn->SetPositionPercentage(true)->SetPosition(45, 50);
 	mQuitBtn->SetClickEvent([actionReturn, active] {

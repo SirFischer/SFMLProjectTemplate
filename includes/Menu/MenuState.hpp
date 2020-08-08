@@ -1,6 +1,7 @@
 #pragma once
 
 #include "State.hpp"
+#include "ResourceManager.hpp"
 
 class MenuState : public State
 {
