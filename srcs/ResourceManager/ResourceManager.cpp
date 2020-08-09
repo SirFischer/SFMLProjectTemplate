@@ -12,6 +12,9 @@ ResourceManager::~ResourceManager()
 
 }
 
+/**
+ * To be extended to sf::texture, sf::audio, sf::image etc...
+ **/
 
 sf::Font		*ResourceManager::LoadFont(std::string tPath)
 {
