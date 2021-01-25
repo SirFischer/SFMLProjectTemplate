@@ -15,7 +15,7 @@ MusicPlayer::~MusicPlayer()
 {
 }
 
-void    MusicPlayer::Play(music:: eID theme)
+void    MusicPlayer::Play(eMusic theme)
 {
     std::string filename = mFilenames[theme];
 

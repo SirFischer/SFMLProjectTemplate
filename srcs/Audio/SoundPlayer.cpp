@@ -1,8 +1,8 @@
 #include "SoundPlayer.hpp"
 
-std::map<soundeffect::eID, std::string>		SoundPlayer::mSoundNames = std::map<soundeffect::eID, std::string>();
-std::map<soundeffect::eID, sf::Sound>		SoundPlayer::mSoundList = std::map<soundeffect::eID, sf::Sound>();
-float										SoundPlayer::mVolume = 	50.f;
+std::map<eSound, std::string>	SoundPlayer::mSoundNames = std::map<eSound, std::string>();
+std::map<eSound, sf::Sound>		SoundPlayer::mSoundList = std::map<eSound, sf::Sound>();
+float							SoundPlayer::mVolume = 	50.f;
 
 SoundPlayer::SoundPlayer(/* args */)
 {
@@ -14,33 +14,33 @@ SoundPlayer::~SoundPlayer()
 
 void	SoundPlayer::Init()
 {
-    SoundPlayer::mSoundNames[soundeffect::eID::SOUNDTEST] = "assets/fonts/SoundEffects/click.ogg";
+    SoundPlayer::mSoundNames[eSound::SOUNDTEST] = "assets/fonts/SoundEffects/click.ogg";
 }
 
-void    SoundPlayer::Play(soundeffect::eID effect)
+void    SoundPlayer::Play(eSound tEffect)
 {
-	if (mSoundList[effect].getStatus() == sf::Sound::Playing)
+	if (mSoundList[tEffect].getStatus() == sf::Sound::Playing)
 		return ;
-    std::string SoundName = mSoundNames[effect];
+    std::string SoundName = mSoundNames[tEffect];
 
-    mSoundList[effect].setBuffer(*ResourceManager::LoadSoundBuffer(SoundName));
-    mSoundList[effect].setLoop(false);
-    mSoundList[effect].play();
+    mSoundList[tEffect].setBuffer(*ResourceManager::LoadSoundBuffer(SoundName));
+    mSoundList[tEffect].setLoop(false);
+    mSoundList[tEffect].play();
 }
 
-void    SoundPlayer::StopSound(soundeffect::eID effect)
+void    SoundPlayer::StopSound(eSound tEffect)
 {
-    mSoundList[effect].stop();
+    mSoundList[tEffect].stop();
 }
 
-void	SoundPlayer::SetPitch(soundeffect::eID effect, float tPitch)
+void	SoundPlayer::SetPitch(eSound tEffect, float tPitch)
 {
-	mSoundList[effect].setPitch(tPitch);
+	mSoundList[tEffect].setPitch(tPitch);
 }
 
-void	SoundPlayer::SetVolume(soundeffect::eID effect, float tVolume)
+void	SoundPlayer::SetVolume(eSound tEffect, float tVolume)
 {
-	mSoundList[effect].setVolume(tVolume * mVolume);
+	mSoundList[tEffect].setVolume(tVolume * mVolume);
 }
 
 

@@ -2,11 +2,7 @@
 
 #include "SFML/Audio.hpp"
 
-namespace music
-{
-    enum eID
+    enum class eMusic
     {
        //Add a music ID's here, like GAMETHEME or MENUTHEME.
     };
-    
-}

@@ -8,10 +8,10 @@
 class SoundPlayer : sf::NonCopyable
 {
 private:
-    static std::map<soundeffect::eID, std::string>		mSoundNames;
-	static std::map<soundeffect::eID, sf::Sound>		mSoundList;
+    static std::map<eSound, std::string>		mSoundNames;
+	static std::map<eSound, sf::Sound>			mSoundList;
 
-    static float										mVolume;
+    static float								mVolume;
 	
 	SoundPlayer(/* args */);
 public:
@@ -19,14 +19,14 @@ public:
 
 	static void											Init();
 
-    static void											Play(soundeffect::eID effect);
+    static void											Play(eSound tEffect);
 
-    static void											StopSound(soundeffect::eID effect);
+    static void											StopSound(eSound tEffect);
     static void											StopSound();
 
-	static void											SetPitch(soundeffect::eID effect, float tPitch);
-	static void											SetVolume(soundeffect::eID effect, float tVolume);
+	static void											SetPitch(eSound tEffect, float tPitch);
+	static void											SetVolume(eSound tEffect, float tVolume);
 
-    static sf::Sound									GetSound(soundeffect::eID tEffect){return (mSoundList[tEffect]);}
+    static sf::Sound									GetSound(eSound tEffect){return (mSoundList[tEffect]);}
 
 };

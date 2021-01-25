@@ -8,13 +8,13 @@ class MusicPlayer : sf::NonCopyable
 {
 private:
     sf::Music							mMusic;
-    std::map<music::eID, std::string>	mFilenames;
+    std::map<eMusic, std::string>		mFilenames;
     float								mVolume;
 public:
     MusicPlayer(/* args */);
     ~MusicPlayer();
 
-    void    Play(music::eID theme);
+    void    Play(eMusic theme);
     void    Stop();
 
     void    SetPaused(bool tpaused);

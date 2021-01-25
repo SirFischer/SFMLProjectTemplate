@@ -2,12 +2,8 @@
 
 #include "SFML/Audio.hpp"
 
-namespace soundeffect
-{
-    enum eID
+    enum class eSound
     {
 	   //Add sound ID's here, like ATTACK or JUMP
        SOUNDTEST
     };
-    
-}
