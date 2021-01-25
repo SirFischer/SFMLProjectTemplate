@@ -7,5 +7,6 @@
  */
 
 #include "GameState.hpp"
+#include "OptionsState.hpp"
 #include "MenuState.hpp"
 

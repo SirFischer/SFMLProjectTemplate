@@ -2,17 +2,17 @@
 
 #include "State.hpp"
 #include "ResourceManager.hpp"
+#include "SoundPlayer.hpp"
 
-class MenuState : public State
+class OptionsState : public State
 {
 private:
-	mf::Button		*mPlayBtn;
+	mf::Button		*mSoundTestBtn;
 	mf::Button		*mQuitBtn;
-	mf::Button		*mOptionsBtn;
-	
+
 public:
-	MenuState(Window *tWindow);
-	~MenuState();
+	OptionsState(Window *tWindow);
+	~OptionsState();
 
 	void		Init();
 	void		HandleEvents();
