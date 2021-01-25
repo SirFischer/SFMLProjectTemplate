@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "mfGUI.hpp"
+#include "SFML/Graphics/View.hpp"
 
 class Window
 {
@@ -10,7 +11,7 @@ private:
 	/****************************
 	 * Change window title here *
 	 ****************************/
-	std::string			mTitle = "SFML Template Project";
+	std::string			mTitle = "default value";
 	
 	bool				mFullscreen = false;
 	sf::VideoMode		mMode = sf::VideoMode(1600, 900);
@@ -18,6 +19,8 @@ private:
 public:
 					Window(/* args */);
 					~Window();
+
+	sf::View 			mView;
 
 
 	/**
@@ -49,5 +52,14 @@ public:
 	void			HideCursor();
 	void			ShowCursor();
 
+	/**
+	 * Camera
+	 **/
+	void			SetView(sf::View tView);
+
+	void			SetDefaultView();
+
 	bool			IsOpen(){return (mWindow.isOpen());}
+
+	void			ResetView(bool tResize);
 };

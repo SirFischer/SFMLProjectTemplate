@@ -69,3 +69,23 @@ void	Window::ShowCursor()
 {
 	mWindow.setMouseCursorVisible(true);
 }
+
+void	Window::SetView(sf::View tView)
+{
+	mWindow.setView(tView);	
+}
+
+void	Window::SetDefaultView()
+{
+	sf::View	defaultView;
+	defaultView = mWindow.getDefaultView();
+	mWindow.setView(defaultView);	
+}
+
+void	Window::ResetView(bool tResize)
+{
+	if (tResize)
+		mWindow.setView(sf::View(sf::Vector2f(mWindow.getSize().x / 2, mWindow.getSize().y / 2), sf::Vector2f(mWindow.getSize())));
+	else
+		mWindow.setView(mWindow.getDefaultView());
+}
