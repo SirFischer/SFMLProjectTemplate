@@ -5,13 +5,17 @@ MusicPlayer::MusicPlayer()
 , mFilenames()
 , mVolume(3.f)
 {
+	/*
+	Set the music that you want to use here by for example typing:
+	mFilenames[Music::GameTheme] = "assets/Music/Gamestate.wav";
+	*/
 }
 
 MusicPlayer::~MusicPlayer()
 {
 }
 
-void    MusicPlayer::Play(Music:: ID theme)
+void    MusicPlayer::Play(music:: eID theme)
 {
     std::string filename = mFilenames[theme];
 

@@ -11,8 +11,6 @@ OptionsState::~OptionsState()
 
 void		OptionsState::Init()
 {
-
-
 	mf::GUI::ClearWidgets();
 	mWindow->ShowCursor();
 
@@ -29,7 +27,7 @@ void		OptionsState::Init()
 	mSoundTestBtn->SetSize(150, 40);
 	mSoundTestBtn->SetClickEvent([&] {
 		SoundPlayer::Init();
-		SoundPlayer::Play(SoundEffect::SOUNDTEST);
+		SoundPlayer::Play(soundeffect::SOUNDTEST);
 	});
 
 	mSoundTestBtn->SetTextFont(*ResourceManager::LoadFont("assets/fonts/Roboto-Regular.ttf"));

@@ -1,10 +1,8 @@
 #include "SoundPlayer.hpp"
 
-std::map<SoundEffect::eID, std::string>		SoundPlayer::mSoundNames = std::map<SoundEffect::eID, std::string>();
-std::map<SoundEffect::eID, sf::Sound>		SoundPlayer::mSoundList = std::map<SoundEffect::eID, sf::Sound>();
-float										SoundPlayer::mVolume = 50.f;
-
-
+std::map<soundeffect::eID, std::string>		SoundPlayer::mSoundNames = std::map<soundeffect::eID, std::string>();
+std::map<soundeffect::eID, sf::Sound>		SoundPlayer::mSoundList = std::map<soundeffect::eID, sf::Sound>();
+float										SoundPlayer::mVolume = 	50.f;
 
 SoundPlayer::SoundPlayer(/* args */)
 {
@@ -16,13 +14,11 @@ SoundPlayer::~SoundPlayer()
 
 void	SoundPlayer::Init()
 {
-    SoundPlayer::mSoundNames[SoundEffect::eID::SOUNDTEST] = "assets/fonts/SoundEffects/click.ogg";
-
+    SoundPlayer::mSoundNames[soundeffect::eID::SOUNDTEST] = "assets/fonts/SoundEffects/click.ogg";
 }
 
-void    SoundPlayer::Play(SoundEffect::eID effect)
+void    SoundPlayer::Play(soundeffect::eID effect)
 {
-	std::cout<<mSoundNames[SoundEffect::eID::SOUNDTEST]<<'\n';
 	if (mSoundList[effect].getStatus() == sf::Sound::Playing)
 		return ;
     std::string SoundName = mSoundNames[effect];
@@ -32,17 +28,17 @@ void    SoundPlayer::Play(SoundEffect::eID effect)
     mSoundList[effect].play();
 }
 
-void    SoundPlayer::StopSound(SoundEffect::eID effect)
+void    SoundPlayer::StopSound(soundeffect::eID effect)
 {
     mSoundList[effect].stop();
 }
 
-void	SoundPlayer::SetPitch(SoundEffect::eID effect, float tPitch)
+void	SoundPlayer::SetPitch(soundeffect::eID effect, float tPitch)
 {
 	mSoundList[effect].setPitch(tPitch);
 }
 
-void	SoundPlayer::SetVolume(SoundEffect::eID effect, float tVolume)
+void	SoundPlayer::SetVolume(soundeffect::eID effect, float tVolume)
 {
 	mSoundList[effect].setVolume(tVolume * mVolume);
 }

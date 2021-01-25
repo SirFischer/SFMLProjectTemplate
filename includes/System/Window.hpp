@@ -11,7 +11,7 @@ private:
 	/****************************
 	 * Change window title here *
 	 ****************************/
-	std::string			mTitle = "Lab Monkey";
+	std::string			mTitle = "default value";
 	
 	bool				mFullscreen = false;
 	sf::VideoMode		mMode = sf::VideoMode(1600, 900);
@@ -55,12 +55,11 @@ public:
 	/**
 	 * Camera
 	 **/
-	void			View();
+	void			SetView(sf::View tView);
 
-	/**
-	 * Camera
-	 **/
 	void			SetDefaultView();
 
 	bool			IsOpen(){return (mWindow.isOpen());}
+
+	void			ResetView(bool tResize);
 };
