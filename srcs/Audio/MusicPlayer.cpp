@@ -15,9 +15,9 @@ MusicPlayer::~MusicPlayer()
 {
 }
 
-void    MusicPlayer::Play(eMusic theme)
+void    MusicPlayer::Play(eMusic tTheme)
 {
-    std::string filename = mFilenames[theme];
+    std::string filename = mFilenames[tTheme];
 
     if (!mMusic.openFromFile(filename))
         throw std::runtime_error("Music " + filename + "could no be loaded.");
@@ -31,9 +31,9 @@ void    MusicPlayer::Stop()
     mMusic.stop();
 }
 
-void    MusicPlayer::SetPaused(bool paused)
+void    MusicPlayer::SetPaused(bool tPaused)
 {
-    if (paused)
+    if (tPaused)
         mMusic.pause();
     else
         mMusic.play();

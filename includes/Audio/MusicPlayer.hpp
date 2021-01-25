@@ -14,9 +14,9 @@ public:
     MusicPlayer(/* args */);
     ~MusicPlayer();
 
-    void    Play(eMusic theme);
+    void    Play(eMusic tTheme);
     void    Stop();
 
-    void    SetPaused(bool tpaused);
-    void    SetVolume(float tvolume);
+    void    SetPaused(bool tPaused);
+    void    SetVolume(float tVolume);
 };
